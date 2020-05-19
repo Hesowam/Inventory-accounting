@@ -11,7 +11,7 @@ import static db.Db.*;
 
 public class soapImpl implements SoapDao {
 
-    public void add(Soap soap) throws Exception {
+    public void add(Soap soap) {
 //        try(Connection connection = DriverManager.getConnection(DATABASE_URL, DATABASE_USERNAME, DATABASE_PASSWORD)){
 //        PreparedStatement statement = connection.prepareStatement("INSERT into soap values (null, ?,?,?,?,?,?,?,?,?,?)");{
 //            statement.setString(1, soap.getName());
@@ -30,7 +30,7 @@ public class soapImpl implements SoapDao {
     }
 
     public List<Soap> getSoapList() {
-        List<Soap> soaps=new ArrayList<Soap>();
+        List<Soap> soaps= new ArrayList<>();
         try {
             Connection connection = DriverManager.getConnection(DATABASE_URL, DATABASE_USERNAME, DATABASE_PASSWORD);
             Statement statement = connection.createStatement();
