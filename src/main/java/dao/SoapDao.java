@@ -1,11 +1,11 @@
-package iar;
+package dao;
 
-import products.Soap;
+import model.Soap;
 
 import java.sql.SQLException;
 import java.util.List;
 
-public interface Isoap {
+public interface SoapDao {
     void add(Soap soap) throws Exception;
 List<Soap> getSoapList() throws SQLException;
 }

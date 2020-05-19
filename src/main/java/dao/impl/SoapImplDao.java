@@ -1,16 +1,15 @@
-package iar.impl;
+package dao.impl;
 
-import iar.Isoap;
-import products.Soap;
+import dao.SoapDao;
+import model.Soap;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
-import static get.db.*;
+import static db.Db.*;
 
-public class soapImpl implements Isoap {
+public class SoapImplDao implements SoapDao {
 
     public void add(Soap soap) throws Exception {
         try(Connection connection = DriverManager.getConnection(DATABASE_URL, DATABASE_USERNAME, DATABASE_PASSWORD)){
