@@ -1,6 +1,6 @@
-package dao;
+package iar;
 
-import model.Soap;
+import products.Soap;
 
 import java.sql.SQLException;
 import java.util.List;

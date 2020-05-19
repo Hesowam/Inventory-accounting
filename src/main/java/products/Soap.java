@@ -1,4 +1,4 @@
-package model;
+package products;
 
 public class Soap {
     private int id;

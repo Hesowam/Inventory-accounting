@@ -1,12 +1,10 @@
 package views.soap;
 
-import dao.SoapDao;
-import dao.impl.SoapImplDao;
-
-import java.util.Scanner;
+import iar.SoapDao;
+import iar.impl.soapImpl;
 
 public class Input{
-    SoapDao soapDAO = new SoapImplDao();
+    SoapDao soapDAO = new soapImpl();
 
     public Input() throws Exception {
 //        System.out.println("Введіть назву мила");

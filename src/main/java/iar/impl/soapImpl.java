@@ -1,7 +1,7 @@
-package dao.impl;
+package iar.impl;
 
-import dao.SoapDao;
-import model.Soap;
+import iar.SoapDao;
+import products.Soap;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -9,7 +9,7 @@ import java.util.List;
 
 import static db.Db.*;
 
-public class SoapImplDao implements SoapDao {
+public class soapImpl implements SoapDao {
 
     public void add(Soap soap) throws Exception {
 //        try(Connection connection = DriverManager.getConnection(DATABASE_URL, DATABASE_USERNAME, DATABASE_PASSWORD)){
