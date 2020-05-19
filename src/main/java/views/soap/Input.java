@@ -1,4 +1,4 @@
-package visual.soap;
+package views.soap;
 
 import dao.SoapDao;
 import dao.impl.SoapImplDao;

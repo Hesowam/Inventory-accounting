@@ -1,4 +1,4 @@
-package visual;
+package views;
 
 public class homepage {
     public static void main(String[] args) throws ClassNotFoundException {
