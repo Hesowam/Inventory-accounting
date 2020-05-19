@@ -13,7 +13,7 @@ public class SoapImplDao implements SoapDao {
 
     public void add(Soap soap) {
 
-        try(Connection connection = DriverManager.getConnection(DATABASE_URL,"root","root")){
+        try(Connection connection = DriverManager.getConnection(DATABASE_URL,"root","1111")){
         PreparedStatement statement = connection.prepareStatement("INSERT into soap values (null, ?,?,?,?,?,?,?,?,?,?)");{
             statement.setString(1, soap.getName());
             statement.setInt(2, soap.getCount());

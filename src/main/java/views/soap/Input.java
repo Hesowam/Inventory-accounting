@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import java.util.Scanner;
 
 public class Input{
-   private SoapDao soapDao =  new SoapImplDao();
+    private SoapDao soapDao =  new SoapImplDao();
 
     public Input() throws Exception {
         System.out.println("Введіть назву мила");
