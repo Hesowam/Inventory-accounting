@@ -5,7 +5,6 @@ import products.Soap;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import static get.db.*;
@@ -17,11 +16,11 @@ public class soapImpl implements Isoap {
         PreparedStatement statement = connection.prepareStatement("INSERT into soap values (null, ?,?,?,?,?,?,?,?,?,?)");{
             statement.setString(1, soap.getName());
             statement.setInt(2, soap.getCount());
-            statement.setDate(3, (java.sql.Date) soap.getDate());
+            statement.setDate(3, soap.getDate());
             statement.setInt(4, soap.getCountInPackage());
             statement.setDouble(5, soap.getPrice());
-            statement.setDate(6, (java.sql.Date) soap.getDateOfManufacturing());
-            statement.setDate(7, (java.sql.Date) soap.getExpirationDate());
+            statement.setDate(6, soap.getDateOfManufacturing());
+            statement.setDate(7,soap.getExpirationDate());
             statement.setString(8, soap.getManufacturing());
             statement.setString(9, soap.getCosmeticClass());
             statement.setInt(10, soap.getWeight());
