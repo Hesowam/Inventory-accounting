@@ -1,13 +1,14 @@
 package views;
 
-public class homepage {
-    public static void main(String[] args) throws ClassNotFoundException {
-        homepage run = new homepage();
-        homepage.run();
+import views.soap.Input;
 
+import java.util.Scanner;
+
+public class homepage {
+    public static void main(String[] args) throws Exception {
+       homepage.run();
     }
-    public static void run() throws ClassNotFoundException {
-        int inputValue = 0;
+    public static void run() throws Exception {
         System.out.println("+---------------------------+");
         System.out.println("|1. Знайти товар            |");
         System.out.println("|2. Знайти товар            |");
@@ -18,24 +19,17 @@ public class homepage {
         System.out.println("|1. Знайти товар            |");
         System.out.println("+---------------------------+");
         System.out.println();
-//        Scanner scan = new Scanner(System.in);
-//        inputValue = scan.nextInt();
-//        switch (inputValue){
-//            case 1:
-//                List soaps = new ArrayList();
-//                System.out.println("entered " + inputValue);
-//                Isoap soap = new soapImpl();
-//                try {
-//                    soaps = soap.getSoapList();
-//                    System.out.println(soaps);
-//                } catch (SQLException throwables) {
-//                    throwables.printStackTrace();
-//                }
-//                break;
-//            default:
-//                System.out.println("Помилка.\nВи ввели хибне число - " + inputValue+", введіть число від 1 до 12");
-//                run();
-//
-//        }
+        String option = new Scanner(System.in).next();
+        while(!option.equals("1")){
+            System.out.println("Error!");
+        }
+        switch (option){
+            case "1":{
+                new Input();
+                break;
+            }
+
+
+        }
     }
 }
