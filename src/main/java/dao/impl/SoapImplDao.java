@@ -12,21 +12,21 @@ import static db.Db.*;
 public class SoapImplDao implements SoapDao {
 
     public void add(Soap soap) throws Exception {
-        try(Connection connection = DriverManager.getConnection(DATABASE_URL, DATABASE_USERNAME, DATABASE_PASSWORD)){
-        PreparedStatement statement = connection.prepareStatement("INSERT into soap values (null, ?,?,?,?,?,?,?,?,?,?)");{
-            statement.setString(1, soap.getName());
-            statement.setInt(2, soap.getCount());
-            statement.setDate(3, (java.sql.Date) soap.getDate());
-            statement.setInt(4, soap.getCountInPackage());
-            statement.setDouble(5, soap.getPrice());
-            statement.setDate(6, (java.sql.Date) soap.getDateOfManufacturing());
-            statement.setDate(7, (java.sql.Date) soap.getExpirationDate());
-            statement.setString(8, soap.getManufacturing());
-            statement.setString(9, soap.getCosmeticClass());
-            statement.setInt(10, soap.getWeight());
-            int rows = statement.executeUpdate();
-            System.out.println("Додано рядків "+rows);
-        }}catch (SQLException exception){System.err.println(exception.getMessage());}
+//        try(Connection connection = DriverManager.getConnection(DATABASE_URL, DATABASE_USERNAME, DATABASE_PASSWORD)){
+//        PreparedStatement statement = connection.prepareStatement("INSERT into soap values (null, ?,?,?,?,?,?,?,?,?,?)");{
+//            statement.setString(1, soap.getName());
+//            statement.setInt(2, soap.getCount());
+//            statement.setDate(3, (java.sql.Date) soap.getDate());
+//            statement.setInt(4, soap.getCountInPackage());
+//            statement.setDouble(5, soap.getPrice());
+//            statement.setDate(6, (java.sql.Date) soap.getDateOfManufacturing());
+//            statement.setDate(7, (java.sql.Date) soap.getExpirationDate());
+//            statement.setString(8, soap.getManufacturing());
+//            statement.setString(9, soap.getCosmeticClass());
+//            statement.setInt(10, soap.getWeight());
+//            int rows = statement.executeUpdate();
+//            System.out.println("Додано рядків "+rows);
+//        }}catch (SQLException exception){System.err.println(exception.getMessage());}
     }
 
     public List<Soap> getSoapList() {
