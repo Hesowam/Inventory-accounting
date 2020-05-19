@@ -1,28 +1,37 @@
 package products;
 
-import java.util.Date;
-
 public class Soap {
     private int id;
     private String name;
-    private Date date;
+
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
+    }
+
+    private int count;
+    private String date;
     private int countInPackage;
     private double price;
-    private Date dateOfManufacturing;
-    private Date expirationDate;
+    private String dateOfManufacturing;
+    private String expirationDate;
     private String manufacturing;
     private int weight;
     private String cosmeticClass;
     public Soap(){
     }
-    public Soap(int id, String name, Date date, int countInPackage,
-                double price, Date dateOfManufacturing, Date expirationDate,
+    public Soap(int id, String name, String date, int count, int countInPackage,
+                double price, String dateOfManufacturing, String expirationDate,
                 String manufacturing, String cosmeticClass, int weight){
         this.id = id;
         this.name = name;
         this.countInPackage = countInPackage;
         this.price = price;
         this.date = date;
+        this.count = count;
         this.manufacturing = manufacturing;
         this.dateOfManufacturing = dateOfManufacturing;
         this.expirationDate = expirationDate;
@@ -38,11 +47,11 @@ public class Soap {
         this.name = name;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
@@ -62,19 +71,19 @@ public class Soap {
         this.price = price;
     }
 
-    public Date getDateOfManufacturing() {
+    public String getDateOfManufacturing() {
         return dateOfManufacturing;
     }
 
-    public void setDateOfManufacturing(Date dateOfManufacturing) {
+    public void setDateOfManufacturing(String dateOfManufacturing) {
         this.dateOfManufacturing = dateOfManufacturing;
     }
 
-    public Date getExpirationDate() {
+    public String getExpirationDate() {
         return expirationDate;
     }
 
-    public void setExpirationDate(Date expirationDate) {
+    public void setExpirationDate(String expirationDate) {
         this.expirationDate = expirationDate;
     }
 

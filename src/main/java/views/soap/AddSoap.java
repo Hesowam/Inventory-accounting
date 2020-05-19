@@ -1,16 +1,16 @@
 package views.soap;
 
 import dao.SoapDao;
-import dao.impl.SoapImplDao;
+import dao.impl.SoapDaoImpls;
 import products.Soap;
 
 import java.sql.SQLException;
 import java.util.Scanner;
 
-public class Input{
-    private SoapDao soapDao =  new SoapImplDao();
+public class AddSoap {
+    private SoapDao soapDao =  new SoapDaoImpls();
 
-    public Input() throws Exception {
+    public AddSoap() throws Exception {
         System.out.println("Введіть назву мила");
         String name = new Scanner(System.in).nextLine();
         System.out.println("Введіть ціну");

@@ -1,7 +1,7 @@
 package views.soap;
 
-import iar.SoapDao;
-import iar.impl.SoapImplDao;
+import dao.SoapDao;
+import dao.impl.SoapDaoImpls;
 import products.Soap;
 
 import java.sql.SQLException;
@@ -9,24 +9,30 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GetAllRows {
-    public static void getAllRows(){
+    public GetAllRows(){
         List<Soap> soaps = new ArrayList();
-        SoapDao soap = new SoapImplDao();
+        SoapDao soap = new SoapDaoImpls();
         try{
             soaps = soap.getSoapList();
         } catch(
                 SQLException exception){
             exception.printStackTrace();
         }
+        System.out.println("+------------------------------------------------------------------------" +
+                "----------------------------------------------------------------------------------+");
+        System.out.println("|Id\t| Наймаенування товару\t\t| Ціна\t| Кількість\t| Дата виробництва\t" +
+                "| Вжити до\t| Клас\t\t\t| Фірма виробник\t| Вага\t| Дата добавлення на склад |");
+        System.out.println("+------------------------------------------------------------------------" +
+                "----------------------------------------------------------------------------------+");
         for(Soap s:soaps){
-            System.out.println("\tНаймаенування товару\tціна\tдата виробництва\tвжити до\tКлас косметики\t" +
-                    "Виробник\tВага\tДата добавлення на склад");
-            System.out.println(s.getName()+"\t\t"+
-                    s.getPrice()+"\t\t"+s.getWeight()+"\t\t"+
-                    s.getDateOfManufacturing()+"\t\t"+
-                    s.getExpirationDate()+"\t\t"+ s.getCosmeticClass()+"\t\t"+
-                    s.getManufacturing()+"\t\t"+
-                    s.getWeight()+"\t\t"+s.getDate());
+            System.out.println("| "+s.getId()+"\t| "+s.getName()+"\t\t| "+
+                    s.getPrice()+"\t| "+s.getCount()+"\t\t\t| "+
+                    s.getDateOfManufacturing()+"\t\t|"+
+                    s.getExpirationDate()+"\t|"+ s.getCosmeticClass()+"\t\t|"+
+                    s.getManufacturing()+"\t\t|"+
+                    s.getWeight()+"\t\t|"+s.getDate()+"\t\t\t\t|");
+            System.out.println("+----------------------------------------------------------------------" +
+                    "----------------------------------------------------------------------------------+");
         }
     }
 }
