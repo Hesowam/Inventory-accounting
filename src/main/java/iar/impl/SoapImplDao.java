@@ -5,18 +5,17 @@ import products.Soap;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import static db.Db.*;
 
-public class soapImpl implements SoapDao {
+public class SoapImplDao implements SoapDao {
 
     public void add(Soap soap) {
-/*
         try(Connection connection = DriverManager.getConnection(DATABASE_URL, DATABASE_USERNAME, DATABASE_PASSWORD)){
         PreparedStatement statement = connection.prepareStatement("INSERT into soap values (null, ?,?,?,?,?,?,?,?,?,?)");{
             statement.setString(1, soap.getName());
-            statement.setInt(2, soap.getCount());
             statement.setDate(3, (java.sql.Date) soap.getDate());
             statement.setInt(4, soap.getCountInPackage());
             statement.setDouble(5, soap.getPrice());
@@ -28,7 +27,6 @@ public class soapImpl implements SoapDao {
             int rows = statement.executeUpdate();
             System.out.println("Додано рядків "+rows);
         }}catch (SQLException exception){System.err.println(exception.getMessage());}
-*/
     }
 
     public List<Soap> getSoapList() {
@@ -40,20 +38,18 @@ public class soapImpl implements SoapDao {
             while (resultSet.next()){
                 int id = resultSet.getInt(1);
                 String name = resultSet.getString(2);
-                int count = resultSet.getInt(3);
-                String date = resultSet.getString(4);
+                Date date = resultSet.getDate(4);
                 int countInPackage = resultSet.getInt(5);
                 double price = resultSet.getDouble(6);
-                String dateOfManufacturing = resultSet.getString(7);
-                String expirationDate = resultSet.getString(8);
+                Date dateOfManufacturing = resultSet.getDate(7);
+                Date expirationDate = resultSet.getDate(8);
                 String manufacturing = resultSet.getString(9);
                 String cosmeticClass = resultSet.getString(10);
                 int weight = resultSet.getInt(11);
-                Soap soap = new Soap(id, name, count, date, countInPackage,
+                Soap soap = new Soap(id, name, date, countInPackage,
                         price, dateOfManufacturing, expirationDate, manufacturing,
                         cosmeticClass, weight);
                 soaps.add(soap);
-                connection.close();
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
