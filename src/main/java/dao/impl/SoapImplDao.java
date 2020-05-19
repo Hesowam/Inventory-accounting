@@ -1,40 +1,38 @@
-package dao.impl;
+package iar.impl;
 
-import dao.SoapDao;
+import iar.Isoap;
 import products.Soap;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import static db.Db.*;
+import static get.db.*;
 
-public class SoapImplDao implements SoapDao {
+public class soapImpl implements Isoap {
 
-    public void add(Soap soap) {
-
-        try(Connection connection = DriverManager.getConnection(DATABASE_URL,"root","1111")){
+    public void add(Soap soap) throws Exception {
+        try(Connection connection = DriverManager.getConnection(DATABASE_URL, DATABASE_USERNAME, DATABASE_PASSWORD)){
         PreparedStatement statement = connection.prepareStatement("INSERT into soap values (null, ?,?,?,?,?,?,?,?,?,?)");{
             statement.setString(1, soap.getName());
             statement.setInt(2, soap.getCount());
-            statement.setDate(3,  Date.valueOf(soap.getDate()));
+            statement.setDate(3, soap.getDate());
             statement.setInt(4, soap.getCountInPackage());
             statement.setDouble(5, soap.getPrice());
-            statement.setDate(6, Date.valueOf(soap.getDateOfManufacturing()));
-            statement.setDate(7,  Date.valueOf(soap.getExpirationDate()));
+            statement.setDate(6, soap.getDateOfManufacturing());
+            statement.setDate(7,soap.getExpirationDate());
             statement.setString(8, soap.getManufacturing());
             statement.setString(9, soap.getCosmeticClass());
             statement.setInt(10, soap.getWeight());
             int rows = statement.executeUpdate();
             System.out.println("Додано рядків "+rows);
         }}catch (SQLException exception){System.err.println(exception.getMessage());}
-
     }
 
     public List<Soap> getSoapList() {
-        List<Soap> soaps= new ArrayList<>();
+        List<Soap> soaps=new ArrayList<Soap>();
         try {
-            Connection connection = DriverManager.getConnection(DATABASE_URL, "root","root");
+            Connection connection = DriverManager.getConnection(DATABASE_URL, DATABASE_USERNAME, DATABASE_PASSWORD);
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery("SELECT * FROM soap");
             while (resultSet.next()){

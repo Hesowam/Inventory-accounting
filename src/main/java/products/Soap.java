@@ -48,7 +48,7 @@ public class Soap {
         this.count = count;
     }
 
-    public String getDate() {
+    public Date getDate() {
         return date;
     }
 
@@ -72,7 +72,7 @@ public class Soap {
         this.price = price;
     }
 
-    public String getDateOfManufacturing() {
+    public Date getDateOfManufacturing() {
         return dateOfManufacturing;
     }
 
@@ -80,7 +80,7 @@ public class Soap {
         this.dateOfManufacturing = dateOfManufacturing;
     }
 
-    public String getExpirationDate() {
+    public Date getExpirationDate() {
         return expirationDate;
     }
 
