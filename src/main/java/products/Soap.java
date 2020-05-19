@@ -1,23 +1,21 @@
 package products;
 
-import java.util.Date;
-
-public class soap {
+public class Soap {
     private int id;
     private String name;
     private int count;
-    private Date date;
+    private String date;
     private int countInPackage;
     private double price;
-    private Date dateOfManufacturing;
-    private Date expirationDate;
+    private String dateOfManufacturing;
+    private String expirationDate;
     private String manufacturing;
     private int weight;
     private String cosmeticClass;
-    public soap(){
+    public Soap(){
     }
-    public soap(int id, String name, int count, Date date, int countInPackage,
-                double price, Date dateOfManufacturing, Date expirationDate,
+    public Soap(int id, String name, int count, String date, int countInPackage,
+                double price, String dateOfManufacturing, String expirationDate,
                 String manufacturing, String cosmeticClass, int weight){
         this.id = id;
         this.name = name;
@@ -48,11 +46,11 @@ public class soap {
         this.count = count;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
@@ -72,19 +70,19 @@ public class soap {
         this.price = price;
     }
 
-    public Date getDateOfManufacturing() {
+    public String getDateOfManufacturing() {
         return dateOfManufacturing;
     }
 
-    public void setDateOfManufacturing(Date dateOfManufacturing) {
+    public void setDateOfManufacturing(String dateOfManufacturing) {
         this.dateOfManufacturing = dateOfManufacturing;
     }
 
-    public Date getExpirationDate() {
+    public String getExpirationDate() {
         return expirationDate;
     }
 
-    public void setExpirationDate(Date expirationDate) {
+    public void setExpirationDate(String expirationDate) {
         this.expirationDate = expirationDate;
     }
 
