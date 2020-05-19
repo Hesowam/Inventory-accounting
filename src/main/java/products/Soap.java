@@ -1,27 +1,25 @@
 package products;
 
-import java.sql.Date;
+import java.util.Date;
 
 public class Soap {
     private int id;
     private String name;
-    private int count;
-    private String date;
+    private Date date;
     private int countInPackage;
     private double price;
-    private String dateOfManufacturing;
-    private String expirationDate;
+    private Date dateOfManufacturing;
+    private Date expirationDate;
     private String manufacturing;
     private int weight;
     private String cosmeticClass;
     public Soap(){
     }
-    public Soap(int id, String name, int count, String date, int countInPackage,
-                double price, String dateOfManufacturing, String expirationDate,
+    public Soap(int id, String name, Date date, int countInPackage,
+                double price, Date dateOfManufacturing, Date expirationDate,
                 String manufacturing, String cosmeticClass, int weight){
         this.id = id;
         this.name = name;
-        this.count = count;
         this.countInPackage = countInPackage;
         this.price = price;
         this.date = date;
@@ -40,19 +38,11 @@ public class Soap {
         this.name = name;
     }
 
-    public int getCount() {
-        return count;
-    }
-
-    public void setCount(int count) {
-        this.count = count;
-    }
-
     public Date getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 
@@ -76,7 +66,7 @@ public class Soap {
         return dateOfManufacturing;
     }
 
-    public void setDateOfManufacturing(String dateOfManufacturing) {
+    public void setDateOfManufacturing(Date dateOfManufacturing) {
         this.dateOfManufacturing = dateOfManufacturing;
     }
 
@@ -84,7 +74,7 @@ public class Soap {
         return expirationDate;
     }
 
-    public void setExpirationDate(String expirationDate) {
+    public void setExpirationDate(Date expirationDate) {
         this.expirationDate = expirationDate;
     }
 
