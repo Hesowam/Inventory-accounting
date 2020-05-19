@@ -1,4 +1,4 @@
-package visual;
+package views;
 
 public class addProduct {
     public static void printMenu(){

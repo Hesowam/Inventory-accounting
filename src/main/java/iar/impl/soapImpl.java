@@ -1,15 +1,15 @@
 package iar.impl;
 
-import iar.Isoap;
+import iar.SoapDao;
 import products.Soap;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import static get.db.*;
+import static db.Db.*;
 
-public class soapImpl implements Isoap {
+public class soapImpl implements SoapDao {
 
     public void add(Soap soap) {
 /*
@@ -32,7 +32,7 @@ public class soapImpl implements Isoap {
     }
 
     public List<Soap> getSoapList() {
-        List<Soap> soaps=new ArrayList<Soap>();
+        List<Soap> soaps= new ArrayList<>();
         try {
             Connection connection = DriverManager.getConnection(DATABASE_URL, DATABASE_USERNAME, DATABASE_PASSWORD);
             Statement statement = connection.createStatement();
