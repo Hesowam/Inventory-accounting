@@ -69,7 +69,7 @@ public class ProductsDaoImpls implements ProductDao {
     public void updateProductInformation(Products products) {
         try(Connection connection = DriverManager.getConnection(getDatabaseUrl(), getDatabaseUser(), getDatabasePassword());
         PreparedStatement statement = connection.prepareStatement("UPDATE products SET Name=?," +
-                "Date = ?, Date_manufacturing = ?, Date_expiration = ?, Weight = ?, " +
+                "Date = ?, Date_manufacturing = ?, Data_expiration = ?, Weight = ?, " +
                 "Price = ?, Distributor = ?, Count_in_package = ?, Count = ? WHERE id = ?")) {
             statement.setString(1, products.getName());
             statement.setDate(2, Date.valueOf(products.getDate()));
