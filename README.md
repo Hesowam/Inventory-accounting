@@ -1,3 +1,4 @@
 # Inventory-accounting
 
-Input/Output product information.
+1. Input/Output product information.
+2. Filter Search.
