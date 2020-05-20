@@ -1,2 +1,3 @@
 # Inventory-accounting
-Аccounting household goods
+
+Input/Output product information.
