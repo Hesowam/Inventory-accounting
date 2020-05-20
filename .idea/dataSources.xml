@@ -7,5 +7,11 @@
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://localhost:3306/inventory-accounting</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="heroku" uuid="8def661d-64ed-4ddd-a219-e94df83c8369">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://fojvtycq53b2f2kx.chr7pe7iynqr.eu-west-1.rds.amazonaws.com:3306/fm6wx7cimiutl764</jdbc-url>
+    </data-source>
   </component>
 </project>

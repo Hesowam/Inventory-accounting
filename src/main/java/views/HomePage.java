@@ -6,9 +6,9 @@ import views.interfaceForProducts.RemoveProduct;
 
 import java.util.Scanner;
 
-public class homepage {
+public class HomePage {
     public static void main(String[] args) throws Exception {
-       homepage.run();
+       HomePage.run();
     }
     public static void run() throws Exception {
         System.out.println("+---------------------------+");

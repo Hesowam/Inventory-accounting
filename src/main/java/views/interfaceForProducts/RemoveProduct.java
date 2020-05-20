@@ -16,5 +16,7 @@ public class RemoveProduct {
         } catch (SQLException exception) {
             exception.printStackTrace();
         }
+        System.out.println("Повернутись до головного меню (y / n)");
     }
+
 }
