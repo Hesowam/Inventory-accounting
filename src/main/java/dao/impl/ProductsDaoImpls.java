@@ -31,10 +31,9 @@ public class ProductsDaoImpls implements ProductDao {
 
     public List<Products> getProductList() {
         List<Products> products = new ArrayList<>();
-        try {
-            Connection connection = DriverManager.getConnection(getDatabaseUrl(), getDatabaseUser(), getDatabasePassword());
+        try(Connection connection = DriverManager.getConnection(getDatabaseUrl(), getDatabaseUser(), getDatabasePassword());
             Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("SELECT * FROM products");
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM products")) {
             while (resultSet.next()){
                 int id = resultSet.getInt(1);
                 String name = resultSet.getString(2);
@@ -54,5 +53,15 @@ public class ProductsDaoImpls implements ProductDao {
             throwables.printStackTrace();
         }
         return products;
+    }
+
+    @Override
+    public void deleteProduct(int id) throws SQLException {
+        try(Connection connection = DriverManager.getConnection(getDatabaseUrl(), getDatabaseUser(), getDatabasePassword());
+            PreparedStatement statement = connection.prepareStatement("DELETE FROM products WHERE id = ?")){
+                statement.setInt(1,id);
+                int rows = statement.executeUpdate();
+                System.out.println("Видалено "+rows+" рядків.");
+            }catch (Exception exception){System.err.println(exception.getMessage());}
     }
 }

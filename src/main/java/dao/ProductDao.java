@@ -8,4 +8,5 @@ import java.util.List;
 public interface ProductDao {
     void add(Products products) throws Exception;
     List<Products> getProductList() throws SQLException;
+    void deleteProduct(int id) throws SQLException;
 }

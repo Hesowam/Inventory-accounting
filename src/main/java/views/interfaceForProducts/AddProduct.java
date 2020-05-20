@@ -2,6 +2,7 @@ package views.interfaceForProducts;
 
 import dao.ProductDao;
 import dao.impl.ProductsDaoImpls;
+import products.ProductCounter;
 import products.Products;
 
 import java.sql.SQLException;
@@ -9,8 +10,14 @@ import java.util.Scanner;
 
 public class AddProduct {
     private ProductDao productDao =  new ProductsDaoImpls();
-
     public AddProduct() throws Exception {
+
+        ProductCounter counter = new ProductCounter();
+        int countValue = counter.getProductCounter();
+        if (countValue>100){
+            System.out.println("Склад преповнено. На складі "+countValue+" товарів із 100");
+            return;
+        }
         System.out.print("Введіть назву товару: ");
         String name = new Scanner(System.in).nextLine();
         System.out.print("Введіть ціну: ");

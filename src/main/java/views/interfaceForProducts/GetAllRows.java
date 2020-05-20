@@ -2,7 +2,6 @@ package views.interfaceForProducts;
 
 import dao.ProductDao;
 import dao.impl.ProductsDaoImpls;
-import products.ProductCounter;
 import products.Products;
 
 import java.sql.SQLException;
@@ -13,12 +12,7 @@ public class GetAllRows {
     public GetAllRows(){
         List<Products> products = new ArrayList();
         ProductDao product = new ProductsDaoImpls();
-        ProductCounter counter = new ProductCounter();
-        int count = counter.getProductCounter();
-        if (count>2){
-            System.out.println("Склад преповнено. На складі "+count+" товарів із 100");
-            return;
-        }
+        int count = 0;
         try{
             products = product.getProductList();
         } catch(
@@ -38,8 +32,14 @@ public class GetAllRows {
                     s.getExpirationDate()+"\t| "+s.getWeight()+"\t\t\t\t| "+
                     s.getPrice()+"\t\t\t| "+s.getDistributor()+"\t| "+
                     s.getCountInPackage()+"\t\t\t\t| "+s.getCount()+"\t\t\t\t|");
+            count+=s.getCount();
             System.out.println("+------------------------------------------------------------------------" +
                     "------------------------------------------------------------------------------------------+");
         }
+        if (count>=100){
+            System.out.println("\nСклад переповнено");
+            return;
+        }
+        System.out.println("\nНа складі товарів "+count+" із 100. Склад може вмістити ще "+(100-count)+" одиниць товару.");
     }
 }
