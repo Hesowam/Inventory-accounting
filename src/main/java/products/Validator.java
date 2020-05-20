@@ -8,7 +8,11 @@ public class Validator {
         boolean val = false;
         Pattern pattern = Pattern.compile("\\d{4}-\\d{2}-\\d{2}$");
         Matcher matcher = pattern.matcher(text);
-        if (matcher.find()){
+        String[] textSplit = text.split("-");
+        int month = Integer.parseInt(textSplit[1]);
+        int year = Integer.parseInt(textSplit[0]);
+        int days = Integer.parseInt(textSplit[2]);
+        if (matcher.find() && month <= 12 && month > 0 && days <=31 && days >0 && year >1970){
             val = true;
         }
         return val;
