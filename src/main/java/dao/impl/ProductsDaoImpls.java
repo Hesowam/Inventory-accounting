@@ -64,4 +64,27 @@ public class ProductsDaoImpls implements ProductDao {
                 System.out.println("Видалено "+rows+" рядків.");
             }catch (Exception exception){System.err.println(exception.getMessage());}
     }
+
+    @Override
+    public void updateProductInformation(Products products) {
+        try(Connection connection = DriverManager.getConnection(getDatabaseUrl(), getDatabaseUser(), getDatabasePassword());
+        PreparedStatement statement = connection.prepareStatement("UPDATE products SET Name=?," +
+                "Date = ?, Date_manufacturing = ?, Date_expiration = ?, Weight = ?, " +
+                "Price = ?, Distributor = ?, Count_in_package = ?, Count = ? WHERE id = ?")) {
+            statement.setString(1, products.getName());
+            statement.setDate(2, Date.valueOf(products.getDate()));
+            statement.setDate(3, Date.valueOf(products.getDateOfManufacturing()));
+            statement.setDate(4, Date.valueOf(products.getExpirationDate()));
+            statement.setInt(5, products.getWeight());
+            statement.setDouble(6, products.getPrice());
+            statement.setString(7, products.getDistributor());
+            statement.setInt(8, products.getCountInPackage());
+            statement.setInt(9, products.getCount());
+            statement.setInt(10, products.getId());
+            int rows = statement.executeUpdate();
+            System.out.println("Оновлено рядків: "+rows);
+        } catch (SQLException exception) {
+            exception.printStackTrace();
+        }
+    }
 }

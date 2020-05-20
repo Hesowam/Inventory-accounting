@@ -3,6 +3,7 @@ package views;
 import views.interfaceForProducts.AddProduct;
 import views.interfaceForProducts.GetAllRows;
 import views.interfaceForProducts.RemoveProduct;
+import views.interfaceForProducts.UpdateProduct;
 
 import java.util.Scanner;
 
@@ -38,6 +39,10 @@ public class HomePage {
             }
             case "3":{
                 new RemoveProduct();
+                break;
+            }
+            case "4":{
+                new UpdateProduct();
                 break;
             }
         }
