@@ -1,2 +1,4 @@
 # Inventory-accounting
-Аccounting household goods
+
+1. Input/Output product information.
+2. Filter Search.
