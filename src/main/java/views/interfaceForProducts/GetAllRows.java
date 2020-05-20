@@ -3,10 +3,12 @@ package views.interfaceForProducts;
 import dao.ProductDao;
 import dao.impl.ProductsDaoImpls;
 import products.Products;
+import views.HomePage;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class GetAllRows {
     public GetAllRows(){
@@ -41,5 +43,15 @@ public class GetAllRows {
             return;
         }
         System.out.println("\nНа складі товарів "+count+" із 100. Склад може вмістити ще "+(100-count)+" одиниць товару.");
+        System.out.println("Повернутись до головного меню (y / n)");
+        String option = new Scanner(System.in).next();
+        option.toLowerCase();
+        while (!option.equals("n") && !option.equals("y")){
+            System.out.println("Повернутись до головного меню (y / n)");
+            option = new Scanner(System.in).next();
+            option.toLowerCase();
+        }
+        if (option.equals("y")) new HomePage();
+        else return;
     }
 }

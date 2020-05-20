@@ -4,6 +4,7 @@ import dao.ProductDao;
 import dao.impl.ProductsDaoImpls;
 import products.ProductCounter;
 import products.Products;
+import views.HomePage;
 
 import java.sql.SQLException;
 import java.util.Scanner;
@@ -52,8 +53,15 @@ public class AddProduct {
         }catch (SQLException ex) {
             ex.printStackTrace();
         }
-
-
-
+        System.out.println("Повернутись до головного меню (y / n)");
+        String option = new Scanner(System.in).next();
+        option.toLowerCase();
+        while (!option.equals("n") && !option.equals("y")){
+            System.out.println("Повернутись до головного меню (y / n)");
+            option = new Scanner(System.in).next();
+            option.toLowerCase();
+        }
+        if (option.equals("y")) new HomePage();
+        else return;
     }
 }
