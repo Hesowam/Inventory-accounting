@@ -2,6 +2,7 @@ package views.interfaceForProducts;
 
 import dao.ProductDao;
 import dao.impl.ProductsDaoImpls;
+import products.ProductCounter;
 import products.Products;
 
 import java.sql.SQLException;
@@ -11,9 +12,15 @@ import java.util.List;
 public class GetAllRows {
     public GetAllRows(){
         List<Products> products = new ArrayList();
-        ProductDao soap = new ProductsDaoImpls();
+        ProductDao product = new ProductsDaoImpls();
+        ProductCounter counter = new ProductCounter();
+        int count = counter.getProductCounter();
+        if (count>2){
+            System.out.println("Склад преповнено. На складі "+count+" товарів із 100");
+            return;
+        }
         try{
-            products = soap.getSoapList();
+            products = product.getProductList();
         } catch(
                 SQLException exception){
             exception.printStackTrace();

@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface ProductDao {
     void add(Products products) throws Exception;
-    List<Products> getSoapList() throws SQLException;
+    List<Products> getProductList() throws SQLException;
 }

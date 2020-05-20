@@ -29,7 +29,7 @@ public class ProductsDaoImpls implements ProductDao {
             }}catch (SQLException exception){System.err.println(exception.getMessage());}
     }
 
-    public List<Products> getSoapList() {
+    public List<Products> getProductList() {
         List<Products> products = new ArrayList<>();
         try {
             Connection connection = DriverManager.getConnection(getDatabaseUrl(), getDatabaseUser(), getDatabasePassword());
