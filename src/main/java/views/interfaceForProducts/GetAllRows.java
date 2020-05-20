@@ -1,8 +1,8 @@
-package views.soap;
+package views.interfaceForProducts;
 
-import dao.SoapDao;
-import dao.impl.SoapDaoImpls;
-import products.Soap;
+import dao.ProductDao;
+import dao.impl.ProductsDaoImpls;
+import products.Products;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -10,10 +10,10 @@ import java.util.List;
 
 public class GetAllRows {
     public GetAllRows(){
-        List<Soap> soaps = new ArrayList();
-        SoapDao soap = new SoapDaoImpls();
+        List<Products> products = new ArrayList();
+        ProductDao soap = new ProductsDaoImpls();
         try{
-            soaps = soap.getSoapList();
+            products = soap.getSoapList();
         } catch(
                 SQLException exception){
             exception.printStackTrace();
@@ -24,12 +24,12 @@ public class GetAllRows {
                 "| Вжити до\t| Клас\t\t\t| Фірма виробник\t| Вага\t| Дата добавлення на склад |");
         System.out.println("+------------------------------------------------------------------------" +
                 "----------------------------------------------------------------------------------+");
-        for(Soap s:soaps){
+        for(Products s: products){
             System.out.println("| "+s.getId()+"\t| "+s.getName()+"\t\t| "+
                     s.getPrice()+"\t| "+s.getCount()+"\t\t\t| "+
                     s.getDateOfManufacturing()+"\t\t|"+
-                    s.getExpirationDate()+"\t|"+ s.getCosmeticClass()+"\t\t|"+
-                    s.getManufacturing()+"\t\t|"+
+                    s.getExpirationDate()+"\t|"+
+                    s.getDistributor()+"\t\t|"+
                     s.getWeight()+"\t\t|"+s.getDate()+"\t\t\t\t|");
             System.out.println("+----------------------------------------------------------------------" +
                     "----------------------------------------------------------------------------------+");

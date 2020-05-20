@@ -1,6 +1,7 @@
 package views;
 
-import views.soap.GetAllRows;
+import views.interfaceForProducts.AddProduct;
+import views.interfaceForProducts.GetAllRows;
 
 import java.util.Scanner;
 
@@ -20,7 +21,7 @@ public class homepage {
         System.out.println("+---------------------------+");
         System.out.println();
         String option = new Scanner(System.in).next();
-        while(!option.equals("1") || option.equals("2")){
+        while(Integer.parseInt(option)<1 && Integer.parseInt(option)>10){
             System.out.println("Error!");
             option = new Scanner(System.in).next();
         }
@@ -30,7 +31,7 @@ public class homepage {
                 break;
             }
             case "2":{
-                new GetAllRows();
+                new AddProduct();
                 break;
             }
         }
