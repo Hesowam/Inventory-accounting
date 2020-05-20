@@ -10,4 +10,7 @@ public interface ProductDao {
     List<Products> getProductList() throws SQLException;
     void deleteProduct(int id) throws SQLException;
     void updateProductInformation(Products products);
+    List<Products> searchByInt(String filterName, int value) throws Exception;
+    List<Products> getSearchByDouble(String filterName, double value) throws Exception;
+    List<Products> getSearchByString(String filterName, String value) throws Exception;
 }

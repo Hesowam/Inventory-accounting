@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import java.util.Scanner;
 
 public class RemoveProduct {
-    public RemoveProduct(){
+    public RemoveProduct() throws Exception {
         ProductDao productDao = new ProductsDaoImpls();
         System.out.print("Введіь ID товару ");
         int id = new Scanner(System.in).nextInt();
@@ -25,7 +25,7 @@ public class RemoveProduct {
             option = new Scanner(System.in).next();
             option.toLowerCase();
         }
-        if (option.equals("y")) new HomePage();
+        if (option.equals("y")) new HomePage().run();
         else return;
     }
 

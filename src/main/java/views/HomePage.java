@@ -1,9 +1,6 @@
 package views;
 
-import views.interfaceForProducts.AddProduct;
-import views.interfaceForProducts.GetAllRows;
-import views.interfaceForProducts.RemoveProduct;
-import views.interfaceForProducts.UpdateProduct;
+import views.interfaceForProducts.*;
 
 import java.util.Scanner;
 
@@ -24,7 +21,7 @@ public class HomePage {
         System.out.println("+===================================+");
         System.out.print("\nВведіть номер: ");
         String option = new Scanner(System.in).next();
-        while(Integer.parseInt(option)<1 && Integer.parseInt(option)>10){
+        while(Integer.parseInt(option)<1 || Integer.parseInt(option)>5){
             System.out.print("\nПомилка! Введіть коректне значення: ");
             option = new Scanner(System.in).next();
         }
@@ -43,6 +40,10 @@ public class HomePage {
             }
             case "4":{
                 new UpdateProduct();
+                break;
+            }
+            case "5":{
+                new SearchByMenu();
                 break;
             }
         }

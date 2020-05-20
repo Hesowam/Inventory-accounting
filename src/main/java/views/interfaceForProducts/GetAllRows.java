@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class GetAllRows {
-    public GetAllRows(){
+    public GetAllRows() throws Exception {
         List<Products> products = new ArrayList();
         ProductDao product = new ProductsDaoImpls();
         int count = 0;
@@ -51,7 +51,7 @@ public class GetAllRows {
             option = new Scanner(System.in).next();
             option.toLowerCase();
         }
-        if (option.equals("y")) new HomePage();
+        if (option.equals("y")) new HomePage().run();
         else return;
     }
 }

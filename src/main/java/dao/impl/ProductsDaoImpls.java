@@ -87,4 +87,82 @@ public class ProductsDaoImpls implements ProductDao {
             exception.printStackTrace();
         }
     }
+
+    @Override
+    public List<Products> searchByInt(String filterName, int value) throws Exception {
+        List<Products> productsList = new ArrayList<>();
+        try(Connection connection = DriverManager.getConnection(getDatabaseUrl(), getDatabaseUser(), getDatabasePassword());
+        PreparedStatement statement = connection.prepareStatement("SELECT * FROM products WHERE "+filterName+"?");){
+            statement.setInt(1, value);
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()){
+                int id = resultSet.getInt(1);
+                String name = resultSet.getString(2);
+                String date = resultSet.getString(3);
+                String dateOfManufacturing = resultSet.getString(4);
+                String expirationDate = resultSet.getString(5);
+                int weight = resultSet.getInt(6);
+                double price = resultSet.getDouble(7);
+                String distributor = resultSet.getString(8);
+                int countInPackage = resultSet.getInt(9);
+                int count = resultSet.getInt(10);
+                Products productsOb = new Products(id, name, date, dateOfManufacturing,
+                        expirationDate, weight, price, distributor, countInPackage, count);
+                productsList.add(productsOb);
+            }
+        }
+        return productsList;
+    }
+
+    @Override
+    public List<Products> getSearchByDouble(String filterName, double value) throws Exception {
+        List<Products> productsList = new ArrayList<>();
+        try(Connection connection = DriverManager.getConnection(getDatabaseUrl(), getDatabaseUser(), getDatabasePassword());
+            PreparedStatement statement = connection.prepareStatement("SELECT * FROM products WHERE "+filterName+"=?");){
+            statement.setDouble(1, value);
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()){
+                int id = resultSet.getInt(1);
+                String name = resultSet.getString(2);
+                String date = resultSet.getString(3);
+                String dateOfManufacturing = resultSet.getString(4);
+                String expirationDate = resultSet.getString(5);
+                int weight = resultSet.getInt(6);
+                double price = resultSet.getDouble(7);
+                String distributor = resultSet.getString(8);
+                int countInPackage = resultSet.getInt(9);
+                int count = resultSet.getInt(10);
+                Products productsOb = new Products(id, name, date, dateOfManufacturing,
+                        expirationDate, weight, price, distributor, countInPackage, count);
+                productsList.add(productsOb);
+            }
+        }
+        return productsList;
+    }
+
+    @Override
+    public List<Products> getSearchByString(String filterName, String value) throws Exception {
+        List<Products> productsList = new ArrayList<>();
+        try(Connection connection = DriverManager.getConnection(getDatabaseUrl(), getDatabaseUser(), getDatabasePassword());
+            PreparedStatement statement = connection.prepareStatement("SELECT * FROM products WHERE "+filterName+"=?");){
+            statement.setString(1, value);
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()){
+                int id = resultSet.getInt(1);
+                String name = resultSet.getString(2);
+                String date = resultSet.getString(3);
+                String dateOfManufacturing = resultSet.getString(4);
+                String expirationDate = resultSet.getString(5);
+                int weight = resultSet.getInt(6);
+                double price = resultSet.getDouble(7);
+                String distributor = resultSet.getString(8);
+                int countInPackage = resultSet.getInt(9);
+                int count = resultSet.getInt(10);
+                Products productsOb = new Products(id, name, date, dateOfManufacturing,
+                        expirationDate, weight, price, distributor, countInPackage, count);
+                productsList.add(productsOb);
+            }
+        }
+        return productsList;
+    }
 }
