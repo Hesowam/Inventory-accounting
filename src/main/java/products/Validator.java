@@ -9,6 +9,7 @@ public class Validator {
         Pattern pattern = Pattern.compile("\\d{4}-\\d{2}-\\d{2}$");
         Matcher matcher = pattern.matcher(text);
         String[] textSplit = text.split("-");
+        if (textSplit.length<=1){return false;}
         int month = Integer.parseInt(textSplit[1]);
         int year = Integer.parseInt(textSplit[0]);
         int days = Integer.parseInt(textSplit[2]);

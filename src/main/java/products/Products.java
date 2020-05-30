@@ -15,7 +15,7 @@ public class Products {
     }
     public Products(int id, String name, String date, String dateOfManufacturing,
                     String expirationDate, int weight, double price,
-                    String distributor, int countInPackage, int count){
+                    String distributor, int      countInPackage, int count){
         this.id = id;
         this.name = name;
         this.date = date;

@@ -17,11 +17,12 @@ public class HomePage {
         System.out.println("|  3. Видалити товр                 |");
         System.out.println("|  4. Оновити інформацію про товар  |");
         System.out.println("|  5. Знайти товар по критеріям     |");
+        System.out.println("|  6. Вихід                         |");
         System.out.println("|                                   |");
         System.out.println("+===================================+");
         System.out.print("\nВведіть номер: ");
         String option = new Scanner(System.in).next();
-        while(Integer.parseInt(option)<1 || Integer.parseInt(option)>5){
+        while(Integer.parseInt(option)<1 || Integer.parseInt(option)>6){
             System.out.print("\nПомилка! Введіть коректне значення: ");
             option = new Scanner(System.in).next();
         }
@@ -45,6 +46,9 @@ public class HomePage {
             case "5":{
                 new SearchByMenu();
                 break;
+            }
+            case "6":{
+                return;
             }
         }
     }

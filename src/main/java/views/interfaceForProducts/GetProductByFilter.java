@@ -25,7 +25,7 @@ public class GetProductByFilter {
                 System.out.print("Введіть ID: ");
                 int id = new Scanner(System.in).nextInt();
                 try {
-                    productsList = productDao.searchByInt("id =", id);
+                    productsList = productDao.searchByInt("id = ", id);
                 } catch (Exception exception) {
                     exception.printStackTrace();
                 }

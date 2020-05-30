@@ -58,7 +58,7 @@ public class UpdateProduct {
         System.out.print("Введіть к-сть товару на складі: ");
         int count = new Scanner(System.in).nextInt();
         if ((countValue+count)>100){
-            System.out.println("Склад преповнено. На складі "+countValue+" + "+(count+countValue)+" товарів із 100");
+            System.out.println("Склад преповнено. На складі "+countValue+" + "+count+" товарів із 100");
             return;
         }
         try {
