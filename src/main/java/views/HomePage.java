@@ -1,11 +1,24 @@
 package views;
 
+import dao.UsersDao;
+import dao.impl.UsersDaoImpls;
+import products.Users;
 import views.interfaceForProducts.*;
 
 import java.util.Scanner;
 
 public class HomePage {
     public static void main(String[] args) throws Exception {
+        UsersDao dao = new UsersDaoImpls();
+        while (true){
+            System.out.print("Введіть логін: ");
+            String username = new Scanner(System.in).next();
+            System.out.print("Введіть пароль: ");
+            String password = new Scanner(System.in).next();
+            Users users = new Users(username, password);
+            if (dao.validateUser(users)) break;
+            else System.out.println("Помилка. Хибні дані.");
+        }
        HomePage.run();
     }
     public static void run() throws Exception {
