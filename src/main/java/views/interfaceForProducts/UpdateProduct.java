@@ -17,7 +17,7 @@ public class UpdateProduct {
         Validator validator = new Validator();
         ProductCounter counter = new ProductCounter();
         int countValue = counter.getProductCounter();
-        System.out.print("Введіть id товару: ");
+        System.out.print("Введіть id менеджера: ");
         int id = new Scanner(System.in).nextInt();
         List<Products> arrayList = new ArrayList<>();
         arrayList = productDao.searchByInt("id", id);

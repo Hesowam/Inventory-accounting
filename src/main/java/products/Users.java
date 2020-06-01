@@ -15,7 +15,7 @@ public class Users {
         this.password = password;
     }
  public boolean equalsUsers(Users users){
-        if (this.password == users.password){
+        if (this.password.equals(users.password) && this.username.equals(users.username)){
             return true;
         }
         return false;
