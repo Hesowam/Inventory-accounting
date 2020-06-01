@@ -15,7 +15,10 @@ public class Users {
         this.password = password;
     }
  public boolean equalsUsers(Users users){
-        return this.username == users.username && this.password == users.password;
+        if (this.password == users.password){
+            return true;
+        }
+        return false;
  }
     @Override
     public String toString() {

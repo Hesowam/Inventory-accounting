@@ -17,7 +17,7 @@ public class UsersDaoImpls implements UsersDao {
                 String name = resultSet.getString(2);
                 String password = resultSet.getString(3);
                 Users users_from_db = new Users(name, password);
-                if  (users_from_db.equalsUsers(users_from_db)){
+                if  (users.equalsUsers(users_from_db)){
                     return true;
                 }
             }
